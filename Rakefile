@@ -27,8 +27,8 @@ begin
     s.name = "railmail"
     s.summary = "Railmail allows email to be delivered and inspected in development mode without the use of a mail server."
     # s.email = ""
-    s.homepage = "http://github.com/jqr/railmail"
-    # s.description = ""
+    s.homepage = "http://nullstyle.com/railmail/"
+    s.description = "When Railmail is enabled, any mail sent by your application will be trapped and stored in a database table. An interface is enabled within your application where you can view these emails. With railmail there is no need to set up testing email accounts while developing your application; just send out mail to any address and Railmail will capture it."
     s.authors = ["Scott Fleckenstein"]
   end
 rescue LoadError
