@@ -20,3 +20,17 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |s|
+    s.name = "railmail"
+    s.summary = "Railmail allows email to be delivered and inspected in development mode without the use of a mail server."
+    # s.email = ""
+    s.homepage = "http://github.com/jqr/railmail"
+    # s.description = ""
+    s.authors = ["Scott Fleckenstein"]
+  end
+rescue LoadError
+  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
+end
