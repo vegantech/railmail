@@ -1,5 +1,20 @@
 = Railmail
 
-Rail Mail is a plugin for ruby on rails that gives you a persisted view of any
-mail your application has sent. It is both a development aid and an
-administrative helper.
+Railmail allows email to be delivered and inspected in development mode
+without the use of a mail server.
+
+== Install
+
+As a Rails plugin, add this to your development.rb and run the following commands.
+
+  ActionMailer::Base.delivery_method = :railmail
+
+  ./script/plugin install git://github.com/jqr/railmail.git 
+  $ rake railmail:migration db:migrate
+
+Prefer gems? Add this to your development.rb and then run the following command.
+
+  config.gem 'jqr-railmail', :lib => 'railmail', :source => 'http://gems.github.com'
+  ActionMailer::Base.delivery_method = :railmail  
+
+  $ rake gems:install railmail:migration db:migrate
