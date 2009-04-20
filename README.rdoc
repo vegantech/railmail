@@ -24,13 +24,6 @@ As a Rails plugin, add this to your development.rb and run the following command
   ./script/plugin install git://github.com/jqr/railmail.git 
   $ rake railmail:migration db:migrate
 
-Prefer gems? Add this to your development.rb and then run the following command.
-
-  config.gem 'jqr-railmail', :lib => 'railmail', :source => 'http://gems.github.com'
-  ActionMailer::Base.delivery_method = :railmail  
-
-  $ rake gems:install railmail:migration db:migrate
-
 == Usage
 
 When your application is running and Railmail is configured correctly,
