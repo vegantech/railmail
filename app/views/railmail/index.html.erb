@@ -23,7 +23,7 @@
 <% if @deliveries.total_pages > 1 %>
 <div id="pager_box">
 	<ul id="pager">
-	  <% @deliveries.page_count.times {|i| page = i+1 %>
+	  <% @deliveries.total_pages.times {|i| page = i+1 %>
 	    <%= "<li#{" class='current'" if page == @deliveries.current_page}>" + (link_to page, {:page => page }) + "</li>"%>
 	  <% } %>
 	</ul>
