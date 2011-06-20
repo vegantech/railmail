@@ -21,5 +21,4 @@ Gem::Specification.new do |s|
 
   s.add_dependency("rails", "~> 3.0.0")
   s.add_dependency("will_paginate", "~> 3.0.pre2")
-  s.add_dependency("mail", "~> 2.2.18")
 end
