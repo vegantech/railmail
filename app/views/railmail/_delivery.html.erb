@@ -27,7 +27,7 @@
 				<%=auto_link delivery_body delivery%>
 				</div>
 					
-				<% form_remote_tag(:url => {:action => 'read'}, :html =>{:class => 'reader'}) do %>
+				<%= form_tag(:url => {:action => 'read'}, :html =>{:class => 'reader'}, :remote => true) do %>
 				<%=hidden_field_tag 'id', delivery.id, :id => nil%>
 				<% end %></div>
 			</div>

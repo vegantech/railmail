@@ -1,7 +1,7 @@
 module RailmailHelper
   def delivery_body(d)
     
-    raw = d.raw
+    raw = Mail.new(d.raw)
     return raw.body unless raw.multipart?
     
     html_parts = raw.parts.select {|p| p.content_type == 'text/html'}.map {|p| p = p.body}
