@@ -1,5 +1,3 @@
-require "railmail/action_mailer"
-
 class RailmailController < ApplicationController
   #skip_filter filter_chain
 
@@ -7,11 +5,11 @@ class RailmailController < ApplicationController
   
   layout 'railmail'
   
-  if Railmail::ActionMailer::InstanceMethods.railmail_settings[:before_filter]
-    Railmail::ActionMailer::InstanceMethods.railmail_settings[:before_filter].each do |sym|
-      before_filter sym
-    end
-  end
+#  if Railmail::ActionMailer::InstanceMethods.railmail_settings[:before_filter]
+#    Railmail::ActionMailer::InstanceMethods.railmail_settings[:before_filter].each do |sym|
+#      before_filter sym
+#    end
+#  end
   
   def index    
     @deliveries = RailmailDelivery.paginate :page => params[:page], :order => 'sent_at DESC', :per_page => 30
