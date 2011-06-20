@@ -1,4 +1,4 @@
-= Railmail
+= Railmail 3
 
 Railmail allows email to be delivered and inspected in development mode
 without the use of a mail server.
@@ -17,12 +17,25 @@ What it does
 
 == Install
 
-As a Rails plugin, add this to your development.rb and run the following commands.
+Add this to your Gemfile:
 
-  ActionMailer::Base.delivery_method = :railmail
+  gem 'railmail', "~> 3.0.0", :git => "https://github.com/zonecheung/railmail.git"
 
-  ./script/plugin install git://github.com/jqr/railmail.git 
-  $ rake railmail:migration db:migrate
+To create the railmail_deliveries table after the gem is installed:
+
+  rails generate railmail_migration
+  rake db:migrate
+
+Add this to your development.rb:
+
+  require "mail"
+  Mail.register_observer(Railmail::Observer)
+
+And the last, add the /railmail to your routes.rb:
+
+  get "/railmail"          => "railmail#index", :as => "railmail_index"
+  get "/railmail/raw/:id"  => "railmail#raw",   :as => "railmail_raw"
+  get "/railmail/port/:id" => "railmail#port",  :as => "railmail_port"
 
 == Usage
 
