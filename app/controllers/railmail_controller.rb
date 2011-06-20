@@ -1,3 +1,5 @@
+require "railmail/action_mailer"
+
 class RailmailController < ApplicationController
   #skip_filter filter_chain
 
