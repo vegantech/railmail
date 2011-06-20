@@ -11,10 +11,11 @@
 				<div><ul class="delivery_operations">
 					<li><a href="#<%=delivery.id%>" class="resend_link">resend</a></li>
 					<li><%= link_to "view raw", {:action => "raw", :id => delivery}, :target => "_blank" %></li>
-					<% if delivery.raw.multipart?%>
+					<% mail = Mail.new(delivery.raw) %>
+					<% if mail.multipart?%>
 					<li>view part:
 							<%=
-								delivery.raw.parts.map do |p|
+								mail.parts.map do |p|
 									link_to h(p.content_type), {:action => 'part', :id => delivery, :part => p.content_type}, :target => "_blank"
 								end.join ' | '
 							%>
