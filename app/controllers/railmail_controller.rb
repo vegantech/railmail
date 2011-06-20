@@ -1,5 +1,5 @@
 class RailmailController < ApplicationController
-  skip_filter filter_chain
+  #skip_filter filter_chain
 
   unloadable
   

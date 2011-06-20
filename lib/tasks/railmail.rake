@@ -24,12 +24,4 @@ namespace :railmail do
   task :clear => :environment do
     RailmailDelivery.delete_all
   end
-  
-  desc "Creates the railmail table migration"
-  task :migration => :environment do
-    raise "Task unavailable to this database (no migration support)" unless ActiveRecord::Base.connection.supports_migrations?
-    require 'rails_generator'
-    require 'rails_generator/scripts/generate'
-    Rails::Generator::Scripts::Generate.new.run(["railmail_migration", ENV["MIGRATION"] || "AddRailmailTable"])
-  end
 end
