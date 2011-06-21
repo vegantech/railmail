@@ -21,7 +21,7 @@
 				</ul><br class="clear" />
 				
 				<div class="delivery_body">
-				<%= auto_link(delivery_body(delivery)) %>
+				<%= raw(auto_link(delivery_body(delivery))) %>
 				</div>
 					
 				<%= form_tag(:url => {:action => 'read'}, :html =>{:class => 'reader'}, :remote => true) do %>
