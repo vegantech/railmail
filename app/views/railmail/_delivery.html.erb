@@ -11,20 +11,17 @@
 				<div><ul class="delivery_operations">
 					<li><a href="#<%=delivery.id%>" class="resend_link">resend</a></li>
 					<li><%= link_to "view raw", {:action => "raw", :id => delivery}, :target => "_blank" %></li>
-					<% mail = Mail.new(delivery.raw) %>
-					<% if mail.multipart?%>
+					<% if delivery.multipart? %>
 					<li>view part:
-							<%=
-								mail.parts.map do |p|
-									link_to h(p.content_type), {:action => 'part', :id => delivery, :part => p.content_type}, :target => "_blank"
-								end.join ' | '
-							%>
+					  <% delivery.parts.each do |p| %>
+              <%= link_to h(p.content_type), {:action => 'part', :id => delivery, :part => p.content_type}, :target => "_blank" %>
+					  <% end %>
 					</li>
 					<% end %>
 				</ul><br class="clear" />
 				
 				<div class="delivery_body">
-				<%=auto_link delivery_body delivery%>
+				<%= auto_link(delivery_body(delivery)) %>
 				</div>
 					
 				<%= form_tag(:url => {:action => 'read'}, :html =>{:class => 'reader'}, :remote => true) do %>

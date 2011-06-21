@@ -35,7 +35,7 @@ And the last, add the /railmail to your routes.rb:
 
   get "/railmail"          => "railmail#index", :as => "railmail_index"
   get "/railmail/raw/:id"  => "railmail#raw",   :as => "railmail_raw"
-  get "/railmail/port/:id" => "railmail#port",  :as => "railmail_port"
+  get "/railmail/part/:id" => "railmail#part",  :as => "railmail_part"
 
 == Usage
 

@@ -36,7 +36,7 @@ class RailmailController < ApplicationController
     @raw = @delivery.raw
     @mime = params[:part]
     
-    @part = @raw.parts.select {|p| p.content_type == @mime }.first
+    @part = @delivery.parts.select {|p| p.content_type == @mime }.first
     render :text => @part.body.to_s, :content_type => @mime
   end
   

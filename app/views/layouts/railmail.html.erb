@@ -7,7 +7,7 @@
 
 <script type="text/javascript">
 /*<![CDATA[*/
-<%= @content_for_js %>
+<%= yield :js %>
 /*]]>*/
 </script>
 <style type="text/css">
@@ -28,13 +28,13 @@ body, p, ol, ul, td {
 	color: #fff;
 }
 
-<%= @content_for_css %>
+<%= yield :css %>
 /*]]>*/
 </style>
 </head>
 
 	<body>
 		<h1 class="banner" id="banner">Rail Mail</h1>
-		<%= @content_for_layout %>
+		<%= yield %>
 	</body>
 </html>
