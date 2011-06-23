@@ -24,7 +24,7 @@
 				<%= raw(auto_link(delivery_body(delivery))) %>
 				</div>
 					
-				<%= form_tag(:url => {:action => 'read'}, :html =>{:class => 'reader'}, :remote => true) do %>
+				<%= form_tag(read_railmail_index_path, :class => 'reader', :remote => true) do %>
 				<%=hidden_field_tag 'id', delivery.id, :id => nil%>
 				<% end %></div>
 			</div>

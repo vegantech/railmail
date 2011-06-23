@@ -1,6 +1,6 @@
 <div id="resend" class="initially_hidden">
 	<div class="translucent_bg"></div>
-	<%= form_tag :url => {:action => 'resend' }, :html => {:id => 'resend_form'}, :remote => true do %>
+	<%= form_tag resend_railmail_index_path, :id => 'resend_form', :remote => true do %>
 		<h2>Resend This Message?</h2>
 		<input type="hidden" name="id" id="resend_delivery" value="" />
 		<p>
@@ -56,7 +56,8 @@
 					Effect.SlideDown(delivery + '_details', {duration: 0.6});
 					$(delivery).addClassName('active');
 					if(Element.hasClassName(delivery, 'new')) {
-						$$('#' + delivery + ' form.reader').first().onsubmit();
+						//$$('#' + delivery + ' form.reader').first().onsubmit();
+						$$('#' + delivery + ' form.reader').first().request();
 					}
 					return false;
 				}

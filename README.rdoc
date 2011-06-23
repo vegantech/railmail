@@ -31,11 +31,14 @@ Add this to your development.rb:
   require "mail"
   Mail.register_observer(Railmail::Observer)
 
-And the last, add the /railmail to your routes.rb:
+And the last, add the resources to your routes.rb:
 
-  get "/railmail"          => "railmail#index", :as => "railmail_index"
-  get "/railmail/raw/:id"  => "railmail#raw",   :as => "railmail_raw"
-  get "/railmail/part/:id" => "railmail#part",  :as => "railmail_part"
+  resources :railmail, :only => %w(index) do
+    get  'raw',    :on => :member
+    get  'part',   :on => :member
+    post 'resend', :on => :collection
+    post 'read',   :on => :collection
+  end
 
 == Usage
 
