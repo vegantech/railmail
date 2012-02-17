@@ -19,7 +19,7 @@ What it does
 
 Add this to your Gemfile:
 
-  gem 'railmail', "~> 3.0.0", :git => "https://github.com/zonecheung/railmail.git"
+  gem 'railmail', "~> 3.2.0", :git => "https://github.com/zonecheung/railmail.git"
 
 To create the railmail_deliveries table after the gem is installed:
 
@@ -34,10 +34,14 @@ Add this to your development.rb:
 And the last, add the resources to your routes.rb:
 
   resources :railmail, :only => %w(index) do
-    get  'raw',    :on => :member
-    get  'part',   :on => :member
-    post 'resend', :on => :collection
-    post 'read',   :on => :collection
+    member do
+      get :raw
+      get :part
+    end
+    collection do
+      post :resend
+      post :read
+    end
   end
 
 == Usage
