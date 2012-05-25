@@ -1,6 +1,6 @@
 class RailmailController < ApplicationController
   #skip_filter filter_chain
-  skip_before_filter :authenticate, :authorize
+  skip_before_filter :authenticate, :authorize, :authenticate_user!
 
   unloadable
   

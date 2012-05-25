@@ -5,6 +5,7 @@ class RailmailDelivery < ActiveRecord::Base
   serialize :from
   serialize :headers
   serialize :raw
+  attr_accessible  :recipients, :from, :subject, :sent_at, :raw
 
   def new?
     read_at.nil?
