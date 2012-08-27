@@ -23,6 +23,7 @@ module Railmail
       (mail.instance_variables.map(&:to_sym) - special_variables).each do |var|
         hash[var.to_s] = mail.instance_variable_get(var)
       end
+      hash['@body'].instance_variable_set('@raw_source', mail.body.raw_source.to_str) if mail.body.raw_source.class != String
       hash
     end
   end
