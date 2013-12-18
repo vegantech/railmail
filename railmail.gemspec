@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.summary     = "Railmail allows email to be delivered and inspected in development mode without the use of a mail server"
   s.email       = "zonecheung@gmail.com"
-  s.homepage    = "http://github.com/zonecheung/railmail"
+  s.homepage    = "http://github.com/vegantech/railmail"
   s.description = "Railmail allows email to be delivered and inspected in development mode without the use of a mail server"
-  s.authors     = ['John Tjanaka']
+  s.authors     = ['Shawn Balestracci']
 
   s.rubyforge_project = "railmail"
 
@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency("rails", "~> 3.0")
+  s.add_dependency("rails", ">= 3.0", "< 4.1")
   s.add_dependency("will_paginate", "~> 3.0.pre2")
 end
