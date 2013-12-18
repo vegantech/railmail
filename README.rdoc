@@ -1,7 +1,10 @@
-= Railmail 3
+= Railmail 3 and 4
 
 Railmail allows email to be delivered and inspected in development mode
 without the use of a mail server.
+
+It doesn't inherit from ApplicationController if you would prefer
+to have your filters run then fork and modify the controller.
 
 When Railmail is enabled, any mail sent by your application will be trapped
 and stored in a database table. An interface is enabled within your
@@ -19,7 +22,7 @@ What it does
 
 Add this to your Gemfile:
 
-  gem 'railmail', "~> 3.2.0", :git => "https://github.com/zonecheung/railmail.git"
+  gem 'railmail', "~> 3.2.0", :git => "https://github.com/vegantech/railmail.git"
 
 To create the railmail_deliveries table after the gem is installed:
 
