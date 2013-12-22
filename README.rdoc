@@ -25,6 +25,10 @@ To create the railmail_deliveries table after the gem is installed:
 
   rails generate railmail_migration
   rake db:migrate
+  
+* Not tested yet on Rails 4
+  
+  
 
 Add this to your development.rb:
 
