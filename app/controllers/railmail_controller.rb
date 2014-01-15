@@ -23,7 +23,7 @@ class RailmailController < ActionController::Base
   end
   
   def raw
-    @delivery = RailmailDelivery.find params[:id]
+    @delivery = RailmailDelivery.find_by_id(params[:id]) || RailmailDelivery.new
     render :text => @delivery.raw.to_s, :content_type => 'text/plain'
   end
   

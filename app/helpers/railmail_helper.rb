@@ -1,4 +1,5 @@
 module RailmailHelper
+  require 'rails_rinku'
   def delivery_body(raw)
 
     return raw.body.decoded unless raw.multipart?

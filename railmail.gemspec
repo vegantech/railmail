@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency("rails", ">= 3.0", "< 4.1")
   s.add_dependency("will_paginate", "~> 3.0.pre2")
+  s.add_dependency("rinku")
 end
